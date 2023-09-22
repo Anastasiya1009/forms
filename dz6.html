@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            position: relative;
+            background-color: beige;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        #form1 {
+            width: 800px;
+            margin: auto;
+            height: 70px;
+        }
+
+        select,
+        input[type="date"] {
+            margin: 20px;
+            margin-bottom: 0;
+            width: 200px;
+        }
+
+        #form2 {
+            width: 800px;
+            margin: auto;
+            display: none;
+            padding-bottom: 30px;
+        }
+
+        label {
+            display: inline-block;
+            width: 38px;
+            border: 1px solid black;
+            margin: 2px;
+        }
+
+        #train {
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #one,
+        #two,
+        #three,
+        #four,
+        #five,
+        #six,
+        #seven {
+            display: inline-block;
+            border: 1px solid black;
+            margin: 3px;
+        }
+
+        #tickets {
+            width: 600px;
+            margin: auto;
+            padding: 30px 0 30px;
+            border-spacing: 0px;
+            text-align: center;
+            display: none;
+        }
+
+        th,
+        .td {
+            border: 1px solid black;
+            text-align: center;
+            border-spacing: 0px;
+            width: 200px;
+            height: 50px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <form id="form1" method="get" onsubmit="return fun1(event)">
+            Direction: <select name="direction" id="direction">
+                <option value="0"></option>
+                <option value="Nsk-Msk">Nsk-Msk</option>
+                <option value="Piter-Msk">Piter-Msk</option>
+                <option value="Vladivostok-Msk">Vladivostok-Msk</option>
+
+            </select>
+            Date: <input type="date">
+            <input type="submit" style="width: 150px;" value="Search">
+            <hr>
+        </form>
+        <form id="form2" method="get" onsubmit="return fun2(event)">
+            <div id="train">
+                <div id="one">
+                    <div>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">1
+                        </label>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">3
+                        </label>
+                    </div>
+                    <div>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">2
+                        </label>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">4
+                        </label>
+                    </div>
+                </div>
+
+                <div id="two">
+                    <div>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">5
+                        </label>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">7
+                        </label>
+                    </div>
+                    <div>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">6
+                        </label>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">8
+                        </label>
+                    </div>
+                </div>
+
+
+                <div id="three">
+                    <div>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">9
+                        </label>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">11
+                        </label>
+                    </div>
+                    <div>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">10
+                        </label>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">12
+                        </label>
+                    </div>
+                </div>
+
+                <div id="four">
+                    <div>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">13
+                        </label>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">15
+                        </label>
+                    </div>
+                    <div>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">14
+                        </label>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">16
+                        </label>
+                    </div>
+                </div>
+
+
+                <div id="five">
+                    <div>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">17
+                        </label>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">19
+                        </label>
+                    </div>
+                    <div>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">18
+                        </label>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">20
+                        </label>
+                    </div>
+                </div>
+
+                <div id="six">
+                    <div>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">21
+                        </label>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">23
+                        </label>
+                    </div>
+                    <div>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">22
+                        </label>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">24
+                        </label>
+                    </div>
+                </div>
+
+                <div id="seven">
+                    <div>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">25
+                        </label>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">26
+                        </label>
+                    </div>
+                    <div>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">27
+                        </label>
+                        <label for="checkbox">
+                            <input class="checkbox" type="checkbox">28
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div style="width: inherit; margin-top: 30px; text-align: end;">
+                <span id="price">Total price: 0$</span>
+                <input type="submit" value="Book">
+            </div>
+        </form>
+        <table id="tickets">
+            <tr>
+                <th><b>Direction</b></th>
+                <th><b>Date</b></th>
+                <th><b>Seat</b></th>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function fun1(event) {
+            let form2 = document.getElementById("form2");
+            form2.style.display = "block";
+            return false;
+        }
+
+        let checkbox = document.querySelectorAll("input[type='checkbox']");
+        let price = document.getElementById("price");
+        document.addEventListener("click", function (event) {
+            event.target = checkbox;
+            let count = 0;
+            for (i = 0; i < checkbox.length; i++) {
+                if (checkbox[i].checked) {
+                    count = count + 62;
+                }
+            }
+            price.innerHTML = "Total price:" + count + "$";
+        });
+
+        function fun2(event) {
+            let direction = document.getElementById("direction").value;
+            let date = document.querySelector("input[type='date']").value;
+            let form1 = document.getElementById("form1");
+            form1.style.display = "none";
+            let form2 = document.getElementById("form2");
+            form2.style.display = "none";
+            let tickets = document.getElementById("tickets");
+            tickets.style.display = "block";
+            for (i = 0; i < checkbox.length; i++) {
+                if (checkbox[i].checked) {
+                    let tr = document.createElement("tr");
+                    let td1 = document.createElement("td");
+                    let td2 = document.createElement("td");
+                    let td3 = document.createElement("td");
+                    tickets.appendChild(tr);
+                    tr.append(td1, td2, td3);
+                    td1.innerText = direction;
+                    td2.innerText = date;
+                    td3.innerText = i + 1;
+                    td1.classList.add("td");
+                    td2.classList.add("td");
+                    td3.classList.add("td");
+                }
+            }
+            return false;
+        }
+    </script>
+</body>
+
+</html>

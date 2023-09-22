@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: beige;
+        }
+
+        input[type="submit"] {
+            width: 420px;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <form method="get" onsubmit="return fun(event)" name="form" name="form">
+        <input type="checkbox" name="one"> Bold
+        <input type="checkbox" name="one"> Underline
+        <input type="checkbox" name="one"> Italics
+        <input type="radio" name="two"> Left
+        <input type="radio" name="two"> Right
+        <input type="radio" name="two"> Justify <br>
+        <textarea name="textarea" id="textarea" cols="55" rows="5"></textarea> <br>
+        <div id="div"></div>
+        <input type="submit" value="Show text">
+    </form>
+
+    <script>
+
+        function fun(event) {
+            let inp = document.getElementsByName("one");
+            let inp2 = document.getElementsByName("two");
+            let text = document.getElementById("textarea");
+            let textV = document.getElementById("textarea").value;
+            let div = document.getElementById("div");
+            div.style.width = "400px";
+            div.style.border = "1px solid black";
+            div.innerText = textV;
+            text.style.display = "none";
+            if (inp[0].checked) {
+                div.style.fontWeight = "bold";
+            }
+            if (inp[1].checked) {
+                div.style.textDecoration = "underline";
+            }
+            if (inp[2].checked) {
+                div.style.fontStyle = "italic";
+            }
+            if (inp2[0].checked) {
+                div.style.textAlign = "left";
+            }
+            if (inp2[1].checked) {
+                div.style.textAlign = "right";
+            }
+            if (inp2[2].checked) {
+                div.style.textAlign = "Justify";
+            }
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>

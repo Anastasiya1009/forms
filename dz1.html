@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+
+            background-color: beige;
+        }
+
+        .first {
+            border: 1px solid black;
+            padding: 20px;
+
+        }
+
+        input {
+            width: 1110px;
+            margin: 10px 0 10px 20px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            margin: 10px 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul style="list-style:none; padding:0;" id="mainList">
+        <li>
+            <div class="first">
+                <h3>Name</h3>
+                <span>22.01.2018, 10.05.00</span>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, dolorem! Blanditiis harum accusamus
+                    nesciunt
+                    eius voluptatibus dignissimos cum omnis optio, itaque nisi nihil, delectus, dolores commodi aliquid
+                    placeat
+                    ab? At ad soluta alias odio itaque delectus veniam natus quisquam sequi laborum esse error,
+                    asperiores
+                    ipsum, non temporibus voluptate eos incidunt.
+                </p>
+            </div>
+        </li>
+
+    </ul>
+
+    <form method="get" id="form1" onsubmit="return checkForm(event)">
+        <p style="text-align: center;"><b>Add new message</b></p>
+        Your name: <input type="text" id="textName" required> <br>
+        Your message: <textarea name="message" id="message" cols="150" rows="2" required></textarea> <br>
+        <input type="submit" value="Send">
+    </form>
+    <script>
+        function checkForm(event) {
+            let str1 = document.createElement("h3");
+            let nameValue = document.getElementById("textName").value;
+            str1.innerHTML = nameValue;
+            let str3 = document.createElement("p");
+            let textValue = document.getElementById("message").value;
+            str3.innerHTML = textValue;
+           let str2 = document.createElement("span");
+            str2.innerHTML =  new Date().toLocaleString();;
+
+            let div = document.createElement("div");
+            let li = document.createElement("li");
+            div.append(str1, str2, str3);           
+            div.classList.add("first");
+            li.append(div);
+            document.getElementById("mainList").append(li);
+            return false;
+        }
+
+    </script>
+</body>
+
+</html>

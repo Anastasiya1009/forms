@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: beige;
+        }
+
+        #book1,
+        #book2,
+        #book3 {
+            width: 240px;
+            height: 450px;
+            border: 1px solid black;
+            display: inline-block;
+            padding: 10px;
+            vertical-align: top;
+
+        }
+
+        .x {
+            height: 70px;
+        }
+
+        img {
+            width: 200px;
+            height: 250px;
+            padding: 20px;
+        }
+
+        p {
+            text-align: right;
+        }
+
+        button {
+            width: 240px;
+            bottom: 0;
+        }
+
+
+        form {
+            width: 400px;
+            height: 450px;
+            display: inline-block;
+            border: 1px solid black;
+            text-align: right;
+            padding: 10px;
+        }
+
+        .order {
+            width: 500px;
+            padding: 20px;
+            border: 1px solid black;
+        }
+
+        input,
+        textarea {
+            margin-right: 0;
+            margin-bottom: 10px;
+
+        }
+
+        input[type="submit"] {
+            width: 400px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="book1">
+            <img src="https://img4.labirint.ru/rc/b0d39a1627e8d68938bb3be1427ac8fd/363x561q80/books84/835470/cover.png?1645100710"
+                alt="">
+            <div class="x">
+                <h2 id="one"><b>Капитанская дочка</b></h2>
+                <span>Александр Пушкин</span>
+            </div>
+            <p><b> 730 p.</b></p>
+            <button onclick="fun1()">Select</button>
+
+        </div>
+        <div id="book2">
+            <img src="https://img3.labirint.ru/rc/4fd7275e91e573559cceb6e4dc28b636/363x561q80/books80/799777/cover.png?1632749111"
+                alt="">
+            <div class="x">
+                <h2 id="two"><b>Великий могучий русский язык</b></h2>
+                <span>Андрей Усачев</span>
+            </div>
+            <p><b>845 p.</b> </p>
+            <button onclick="fun2()">Select</button>
+
+        </div>
+        <div id="book3">
+            <img src="https://img4.labirint.ru/rc/eb9a6f337b9276955f5cef40a6ccf6c8/363x561q80/books46/451006/cover.png?1575397507"
+                alt="">
+            <div class="x">
+                <h2 id="three"><b>Остров Сокровищ</b></h2>
+                <span>Роберт Стивенсон</span>
+            </div>
+            <p><b>2976 p.</b> </p>
+            <button onclick="fun3()">Select</button>
+
+        </div>
+        <form action="" method="get" id="form1" onsubmit="return checkForm(event)">
+
+            Книга: <input type="text" id="bookName" required> <br>
+
+            Количество: <input type="text" id="deliv" required><br>
+
+            Имя: <input type="text" id="uName" required><br>
+
+            Адрес доставки: <textarea name="text" id="address" cols="30" rows="8" required></textarea><br>
+
+            Дата доставки: <input type="text" id="dateDeliv" required><br>
+
+            Комментарий: <textarea name="" id="" cols="30" rows="8"></textarea><br>
+
+            <input type="submit" value="Send">
+        </form>
+    </div>
+
+</body>
+<script>
+    function fun1() {
+        let inp = document.getElementById('bookName');
+        inp.value = document.getElementById('one').textContent;
+    }
+    function fun2() {
+        let inp = document.getElementById('bookName');
+        inp.value = document.getElementById('two').textContent;
+    }
+    function fun3() {
+        let inp = document.getElementById('bookName');
+        inp.value = document.getElementById('three').textContent;
+    }
+    function checkForm(event) {
+        let bName = document.getElementById("bookName").value;
+        let deliv = document.getElementById("deliv").value;
+        let uName = document.getElementById("uName").value;
+        let address = document.getElementById("address").value;
+        let dateDeliv = document.getElementById("dateDeliv").value;
+        let div = document.createElement("div");
+        div.innerHTML = uName + ', спасибо за ваш заказ! <br/> <br/>' + ' Книга "' + bName + '" будет доставлена ' + dateDeliv + ' по адресу ' + address + '.';
+        document.body.appendChild(div);
+        div.classList.add("order");
+        let divOld = document.getElementById("container");
+        divOld.style.display = "none";
+        return false;
+    }
+</script>
+
+</html>
